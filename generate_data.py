@@ -7,7 +7,7 @@ def generate_dna(lenght=100):
 with open("sample.fasta", "w") as f:
     for i in range (1,6):
         f.write(f">sequence_{i} description_test_{i}\n")
-        f. write(f">{generate_dna(random.randint(80,150))}\n")
+        f. write(f"{generate_dna(random.randint(80,150))}\n")
 
 #2. create a sample of fastq file
 with open("sample.fastq", "w") as f:
