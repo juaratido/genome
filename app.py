@@ -31,6 +31,15 @@ if uploaded_file is not None:
         st.subheader("Sequence Details")
         st.dataframe(df, use_container_width=True)
 
+        #add csv download button
+        csv = df.to_csv(index=False).encode('utf-8')
+        st.download_button(
+            label = "📥 Download Summary CSV",
+            data = csv,
+            file_name = "genomic_summary.csv",
+            mime = "tet/csv",
+        )
+
         # 4. Render charts
         st.subheader("Data Distribution")
         fig, axes = plt.subplots(1, 2, figsize=(10, 3.5))
